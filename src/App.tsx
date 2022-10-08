@@ -1,10 +1,10 @@
 import { FormEvent, useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.scss'
 import { useMultistepForm } from './useMultistepForm'
 import { UserForm } from './components/UserForm'
 import { AddressForm } from './components/AddressForm'
 import { AccountForm } from './components/AccountForm'
+import Swal from 'sweetalert2';
 
 type FormData = {
   firstName: string,
@@ -49,12 +49,25 @@ function App() {
   ])
 
   // Form Validation
-  const onSubmit = (event: FormEvent) => {
+  const onSubmit = async (event: FormEvent) => {
     event.preventDefault()
 
     if (!isLastStep) return next()
-    alert("Succesful account creation")
-    console.log({data})
+
+    let text: string = ""
+    for (const property in data) {
+      text += `${property}: ${data[property as keyof typeof data]} <br />`
+    }
+
+    const res = await Swal.fire({
+      title: 'Success!',
+      html: text,
+      icon: "success",
+      confirmButtonText: "Ok"
+    })
+    
+    if (res.isConfirmed) window.location.reload()
+
   }
 
   return <div className='form-container'>

@@ -2,15 +2,39 @@
 Variables
 ================================= */
 $bg-color: #251B37;
+$bg-color2: #372948;
 $primary-color: #FFCACA;
 $secondary-color: #FFECEF;
 
+$s: 576px;
+$m: 786px;
+$l: 992px;
+$xl: 1200px;
+$xxl: 1400px;
 
 /* =================================
 General Styles
 ================================= */
+* {
+  font-family: 'Poppins', system-ui;
+  // font-family: system-ui;
+}
+
+body {
+  background-color: $bg-color;
+  color: #fff;
+}
 
 
+/* =================================
+Root
+================================= */
+#root{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+}
 
 /* =================================
 Form
@@ -18,12 +42,14 @@ Form
 
 
 .form-container {
-  border: 1px solid #000;
-  border-radius: .5rem;
   width: 100%;
   padding: 1rem 2rem;
   max-width: 80vw;
   margin: 0 auto;
+
+  h2 {
+    text-align: center;
+  }
 }
 
 .form-container form {
@@ -36,8 +62,52 @@ Form
   top: -.5rem;
 }
 
+// Fields
+.fields-container {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    all: unset;
+    background-color: rgba(255,255,255,0.2);
+    border-bottom: 1px solid #fff;
+    margin-bottom: 10px;
+    color: #fff;
+    padding: 5px 10px;
+
+    &::placeholder {
+      color: rgba($color: #fff, $alpha: 0.5);
+    }
+  }
+
+}
+
+
+// Buttons
 .buttons-container {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
+
+  button {
+    all: unset;
+    background-color: $primary-color;
+    color: $bg-color;
+    padding: 10px 30px;
+    transition: .3s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+}
+
+
+// Media Queries
+
+@media screen and (min-width: $xxl) {
+  .form-container {
+    max-width: 50vw;
+  }
 }

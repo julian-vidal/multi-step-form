@@ -9,7 +9,7 @@ export function FormWrapper({title, children}: FormWrapperProps) {
   return (
     <>
         <h2>{title}</h2>
-        <div>{children}</div>
+        <div className="fields-container">{children}</div>
     </>
   )
 }

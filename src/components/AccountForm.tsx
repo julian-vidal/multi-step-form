@@ -13,7 +13,7 @@ export function AccountForm({email, password, updateFields} : AccountFormProps) 
     return(
         <FormWrapper title="Account Creation">
             <input
-                type="text"
+                type="email"
                 required
                 autoFocus
                 placeholder="Email*"
