@@ -1,7 +1,7 @@
 # Description
 This is a multi step form where the custom hook `useMultiStepForm` was created.
 
-Check the live demo [here](multistepform.julianvidal-dev.com)
+Check the live demo [here](https://multistepform.julianvidal-dev.com/)
 
 Libraries/Stack used:
 * [React](https://reactjs.org/)
