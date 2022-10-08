@@ -1,0 +1,43 @@
+/* =================================
+Variables
+================================= */
+$bg-color: #251B37;
+$primary-color: #FFCACA;
+$secondary-color: #FFECEF;
+
+
+/* =================================
+General Styles
+================================= */
+
+
+
+/* =================================
+Form
+================================= */
+
+
+.form-container {
+  border: 1px solid #000;
+  border-radius: .5rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+.form-container form {
+  position: relative;
+}
+
+.step-counter {
+  position: absolute;
+  right: 0;
+  top: -.5rem;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
